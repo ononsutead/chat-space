@@ -1,0 +1,56 @@
+
+$btn-color: #38AEF0;
+
+@mixin side-font($size) {
+    color: #FFFFFF;
+    font-size: $size;
+    font-weight: bold;
+}
+
+@mixin message-font($size) {
+  color: #434a54;
+  font-size: $size;
+}
+
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.input-box{
+
+  padding-left:10px;
+  padding-right:10px;
+  height:50px;
+  width: calc(100vw - 525px);
+  color: #434a54;
+  font-size: 16px;
+  margin-left:10px;
+  
+}
+
+.send-btn{
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  height:50px;
+  width: 100px;
+  margin-left:15px;
+  background-color: $btn-color;
+  color: white;
+  font-size: 16px;
+  padding: 0px 30px; 
+  cursor: pointer;
+}
+.image-src{
+  position: absolute;
+  right: 165px;
+  
+
+}
+
+
