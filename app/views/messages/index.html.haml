@@ -1,0 +1,64 @@
+
+.wrapper
+  .header
+    .header__logo
+      グループ作成をしました
+  .chat-side
+    .side-header
+      .side-header__box-login-name
+        LOGIN-NAME
+      .side-header__box-icon
+        = link_to "https://master.tech-camp.in/" do
+          %i.fa.fa-pencil-square-o
+        = link_to "https://master.tech-camp.in/" do
+          %i.fa.fa-cog
+        
+    .groups
+      .groups__group
+        .groups__group__group-name1
+          group-name1
+        .groups__group__first-comment
+          first-comment
+        .groups__group__group-name2
+          group-name2
+        .groups__group__first-comment2
+          first-comment2
+     
+    
+  .chat-main
+    .main-header
+      .main-header__left-box__group-name
+        group-name
+      .main-header__left-box__member-list
+        member:
+      .main-header__left-box__edit
+        Edit
+    .messages
+      .messages__message
+        .messages__message__sender
+          sender
+          .messages__message__sender__date
+            2019/08/18(Sun) 01:20:06
+        .messages__message__text
+          message-text
+        .messages__message__sender2
+          sender2
+    .form
+      .form__box
+ 
+        %form{action:"/", method:"get"}
+        %input{type:"text", name:"sendmessage", placeholder:"type a message", class:"input-box"}
+        %label.upload-label{for: "upload-icon", class:"image-src"}
+          %input{type:"file",style:"display:none;",id:"upload-icon"} 
+          %i.fa.fa-picture-o
+        %form{action:"/", method:"post"}
+        %input{type:"submit", name:"sendmessage", value:"send", class:"send-btn"}
+        
+       
+
+
+
+
+
+
+
