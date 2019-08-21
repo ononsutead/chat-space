@@ -1,4 +1,7 @@
+
 .wrapper
+
+
   .chat-side
     = render 'shared/side_bar'
      
@@ -6,16 +9,11 @@
   .chat-main
     .main-header
       .main-header__left-box__group-name
-        = @group.name
+        group-name
       .main-header__left-box__member-list
-        member：
-        = @group.users.pluck(:name).join(",")
-            
-        
+        member:
       .main-header__left-box__edit
-        = form_for [@group, @message] do |f|
-          = link_to edit_group_path(@group) do
-            = 'Edit'
+        Edit
     .messages
       = render @messages
 
@@ -27,6 +25,8 @@
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
+
+      
 
 
 
