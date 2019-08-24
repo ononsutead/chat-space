@@ -42,11 +42,10 @@ $(function(){
       
         var html = buildHTML(message);
       
-        $('.messages').append(html)
-        $('#message_content').val('')
-        $('#message_image').val(null)
+        $('.messages').append(html);
+        $('.new_message')[1].reset();
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-
+      
     })
 
     .fail(function(){
