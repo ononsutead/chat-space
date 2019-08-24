@@ -1,5 +1,6 @@
 $(function(){
-  function buildHTML1(message){
+  function buildHTML(message){
+    image = (message.image.url) ? ` <img src ="${message.image.url}">` : ""; //三項演算子を使ってmessage.imageにtrueならHTML要素、faiseなら空の値を代入。
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -11,28 +12,9 @@ $(function(){
                   </div>
                   <div class="lower-message">
                     <p class="lower-message__content">
-                      ${message.content}
-                     
+                        ${message.content}
                     </p>  
-                  </div>
-                </div>`
-    return html;
-  }
-  function buildHTML2(message){
-    var html = `<div class="message">
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
-                      ${message.name}
-                    </div>
-                    <div class="upper-message__date">
-                      ${message.date}
-                    </div>
-                  </div>
-                  <div class="lower-message">
-                    <p class="lower-message__content">
-                      ${message.content}<br>
-                      <img src ="${message.image.url}">
-                    </p>  
+                    ${image}
                   </div>
                 </div>`
     return html;
@@ -57,24 +39,14 @@ $(function(){
     })
     .done(function(message){
 
-      if( message.image.url == null){
-        var html = buildHTML1(message);
       
-        $('.messages').append(html)
-        $('#message_content').val('')
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      } else{
-        var html = buildHTML2(message);
+        var html = buildHTML(message);
       
         $('.messages').append(html)
         $('#message_content').val('')
         $('#message_image').val(null)
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
 
-      }
-    
-        
-  
     })
 
     .fail(function(){
