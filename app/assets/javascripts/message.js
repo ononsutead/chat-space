@@ -21,10 +21,6 @@ $(function(){
   }
 
 
-
-
-
-
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,12 +34,11 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-
       
         var html = buildHTML(message);
       
         $('.messages').append(html);
-        $('.new_message')[1].reset();
+        $('.new_message')[0].reset();
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       
     })

@@ -13,9 +13,6 @@ class MessagesController < ApplicationController
         format.html { redirect_to group_messages_path(params[:group_id])  }
         format.json
       end      
-
-
-
      
     else
       @messages = @group.messages.includes(:user)
@@ -33,7 +30,5 @@ class MessagesController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
   end
-
- 
 
 end
