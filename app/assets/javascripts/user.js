@@ -44,7 +44,7 @@ var group_user_list = $("#chat-group-users");
         for ( i ; i < users_length; i++) {
           var group_id = $('.group__id').eq(i).val();
           users_ids.push(group_id)
-          console.log(users_ids)
+          
        
         }
        
