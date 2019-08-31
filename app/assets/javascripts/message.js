@@ -19,8 +19,7 @@ $(function(){
                 </div>`
     return html;
   }
-
-
+  
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,7 +37,7 @@ $(function(){
         var html = buildHTML(message);
       
         $('.messages').append(html);
-        $('.new_message')[0].reset();
+        $('.new_message')[1].reset();
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       
     })
@@ -49,6 +48,6 @@ $(function(){
     .always(function(data){
       $('.form__submit').prop('disabled', false);
     })
-    
+  
   })
 });
