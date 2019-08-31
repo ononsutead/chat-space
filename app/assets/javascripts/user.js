@@ -53,7 +53,7 @@ var group_user_list = $("#chat-group-users");
       $.ajax({
         type: 'GET',
         url: '/users',
-        data: { keyword: input, users__ids: users_ids},
+        data: { keyword: input, users_ids: users_ids},
         dataType: 'json'
         
       })
