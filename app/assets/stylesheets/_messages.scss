@@ -147,6 +147,7 @@
   &__message {
     border: none;
     float: left;
+    margin-left:20px;
     height: 50px;
     width: calc(100% - 150px);
   }
@@ -171,7 +172,7 @@
     font-size: 16px;
     height: 50px;
     margin-left: 15px;
-    padding: 0 30px;
+    padding: 0 20px;
   }
 }
 
